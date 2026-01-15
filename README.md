@@ -57,7 +57,7 @@ Giao diện đăng nhập hiện ra → Nhập tên → Bắt đầu chơi.
 | Trần Phát Đạt | Game Logic | Tạo file questions.json. Code Logic: Check đáp án đúng/sai, tính điểm. Xử lý trạng thái (Chờ, Đang chơi, Kết thúc). | `feature/game-logic` |
 | Thành viên 3 | Client Network | Code lớp mạng phía Client (Connect, Send, Receive). Xử lý luồng nhận dữ liệu (Background Thread) để không treo UI. | `feature/client-net` |
 | Sim Lưu Gia Bảo | Frontend (GUI) | Code giao diện Tkinter. Thiết kế màn hình: Login, Quiz (Câu hỏi + 4 nút), Kết quả. Hiển thị dữ liệu từ Server lên màn hình. | `feature/client-ui` |
-| Thành viên 5 | Protocol & QC | Định nghĩa JSON Schema. Test kết nối giữa các máy. Merge code và viết tài liệu báo cáo. | `feature/protocol-tests` |
+| Lê Hoàng NHật Bình | Protocol & QC | Định nghĩa JSON Schema. Test kết nối giữa các máy. Merge code và viết tài liệu báo cáo. | `feature/protocol-tests` |
 
 ---
 
