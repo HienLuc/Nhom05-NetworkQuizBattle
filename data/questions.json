@@ -1,1 +1,553 @@
+[
+  {
+    "id": 1,
+    "question": "Nước sôi ở 100°C trong điều kiện nào?",
+    "options": {
+      "A": "Trên đỉnh núi cao",
+      "B": "Trong chân không",
+      "C": "Ở áp suất khí quyển tiêu chuẩn",
+      "D": "Trong tủ lạnh"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 2,
+    "question": "Hành tinh nào gần Mặt Trời nhất?",
+    "options": {
+      "A": "Trái Đất",
+      "B": "Sao Kim",
+      "C": "Sao Hỏa",
+      "D": "Sao Thủy"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 3,
+    "question": "Bộ phận nào của tế bào chứa vật chất di truyền?",
+    "options": {
+      "A": "Màng tế bào",
+      "B": "Nhân tế bào",
+      "C": "Ribosome",
+      "D": "Ty thể"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 4,
+    "question": "Kim loại nào dẫn điện tốt nhất?",
+    "options": {
+      "A": "Đồng",
+      "B": "Nhôm",
+      "C": "Bạc",
+      "D": "Sắt"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 5,
+    "question": "Ánh sáng trắng là sự kết hợp của bao nhiêu màu?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "7",
+      "D": "8"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 6,
+    "question": "Loại vitamin nào giúp phòng bệnh còi xương?",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin B",
+      "C": "Vitamin C",
+      "D": "Vitamin D"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 7,
+    "question": "Đơn vị đo cường độ dòng điện là gì?",
+    "options": {
+      "A": "Vôn",
+      "B": "Oát",
+      "C": "Ampe",
+      "D": "Jun"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 8,
+    "question": "Loài nào sau đây là động vật có vú?",
+    "options": {
+      "A": "Cá mập",
+      "B": "Cá voi",
+      "C": "Cá ngựa",
+      "D": "Cá đuối"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 9,
+    "question": "Hiện tượng cầu vồng hình thành do đâu?",
+    "options": {
+      "A": "Phản xạ ánh sáng",
+      "B": "Khúc xạ và tán sắc ánh sáng",
+      "C": "Hấp thụ ánh sáng",
+      "D": "Phát xạ ánh sáng"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 10,
+    "question": "Chất nào sau đây là axit?",
+    "options": {
+      "A": "NaOH",
+      "B": "HCl",
+      "C": "NaCl",
+      "D": "CaCO3"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 11,
+    "question": "Việt Nam thuộc châu lục nào?",
+    "options": {
+      "A": "Châu Âu",
+      "B": "Châu Phi",
+      "C": "Châu Á",
+      "D": "Châu Mỹ"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 12,
+    "question": "Thủ đô của Nhật Bản là gì?",
+    "options": {
+      "A": "Osaka",
+      "B": "Kyoto",
+      "C": "Tokyo",
+      "D": "Nagoya"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 13,
+    "question": "Dãy núi cao nhất thế giới là dãy nào?",
+    "options": {
+      "A": "Andes",
+      "B": "Alps",
+      "C": "Himalaya",
+      "D": "Rocky"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 14,
+    "question": "Đại dương lớn nhất thế giới là gì?",
+    "options": {
+      "A": "Đại Tây Dương",
+      "B": "Ấn Độ Dương",
+      "C": "Bắc Băng Dương",
+      "D": "Thái Bình Dương"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 15,
+    "question": "Khí hậu chủ yếu của Việt Nam là gì?",
+    "options": {
+      "A": "Ôn đới",
+      "B": "Hàn đới",
+      "C": "Nhiệt đới gió mùa",
+      "D": "Sa mạc"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 16,
+    "question": "Chủ tịch đầu tiên của nước Việt Nam Dân chủ Cộng hòa là ai?",
+    "options": {
+      "A": "Võ Nguyên Giáp",
+      "B": "Phạm Văn Đồng",
+      "C": "Hồ Chí Minh",
+      "D": "Trường Chinh"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 17,
+    "question": "Chiến thắng Bạch Đằng năm 938 gắn với ai?",
+    "options": {
+      "A": "Ngô Quyền",
+      "B": "Trần Hưng Đạo",
+      "C": "Lý Thường Kiệt",
+      "D": "Quang Trung"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 18,
+    "question": "Cách mạng Tháng Tám thành công năm nào?",
+    "options": {
+      "A": "1930",
+      "B": "1945",
+      "C": "1954",
+      "D": "1975"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 19,
+    "question": "Kim tự tháp nổi tiếng thuộc quốc gia nào?",
+    "options": {
+      "A": "Hy Lạp",
+      "B": "Mexico",
+      "C": "Ai Cập",
+      "D": "Ấn Độ"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 20,
+    "question": "Chiến thắng Điện Biên Phủ diễn ra năm nào?",
+    "options": {
+      "A": "1952",
+      "B": "1953",
+      "C": "1954",
+      "D": "1955"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 21,
+    "question": "Thói quen nào tốt cho sức khỏe?",
+    "options": {
+      "A": "Thức khuya",
+      "B": "Ăn nhiều đồ ngọt",
+      "C": "Tập thể dục đều đặn",
+      "D": "Uống ít nước"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 22,
+    "question": "Kỹ năng quan trọng khi làm việc nhóm là gì?",
+    "options": {
+      "A": "Im lặng",
+      "B": "Giao tiếp",
+      "C": "Tranh cãi",
+      "D": "Tránh né"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 23,
+    "question": "Hành vi nào thể hiện văn minh nơi công cộng?",
+    "options": {
+      "A": "Chen lấn",
+      "B": "Xả rác",
+      "C": "Xếp hàng",
+      "D": "Nói chuyện lớn"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 24,
+    "question": "Việc làm nào giúp bảo vệ môi trường?",
+    "options": {
+      "A": "Đốt rác",
+      "B": "Dùng túi nilon",
+      "C": "Phân loại rác",
+      "D": "Lãng phí nước"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 25,
+    "question": "Tư duy logic giúp ích nhất trong lĩnh vực nào?",
+    "options": {
+      "A": "Giải trí",
+      "B": "Học tập và giải quyết vấn đề",
+      "C": "Ăn uống",
+      "D": "Ngủ nghỉ"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 26,
+    "question": "Nghe nhạc quá to có thể gây hại cho bộ phận nào?",
+    "options": {
+      "A": "Mắt",
+      "B": "Tim",
+      "C": "Tai",
+      "D": "Da"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 27,
+    "question": "Uống đủ nước mỗi ngày giúp gì cho cơ thể?",
+    "options": {
+      "A": "Mệt mỏi",
+      "B": "Giữ cơ thể khỏe mạnh",
+      "C": "Mất nước",
+      "D": "Giảm trí nhớ"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 28,
+    "question": "Khi bị căng thẳng, cách xử lý tốt nhất là gì?",
+    "options": {
+      "A": "Giữ trong lòng",
+      "B": "Bỏ ăn",
+      "C": "Chia sẻ và nghỉ ngơi",
+      "D": "Thức khuya"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 29,
+    "question": "Kỹ năng quan trọng trong thời đại số là gì?",
+    "options": {
+      "A": "Học thuộc lòng",
+      "B": "Bắt chước",
+      "C": "Tư duy phản biện",
+      "D": "Tránh né"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 30,
+    "question": "Tiết kiệm điện giúp ích gì?",
+    "options": {
+      "A": "Tăng chi phí",
+      "B": "Bảo vệ môi trường",
+      "C": "Gây ô nhiễm",
+      "D": "Không có lợi"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 31,
+    "question": "Sông dài nhất thế giới là sông nào?",
+    "options": {
+      "A": "Sông Amazon",
+      "B": "Sông Nile",
+      "C": "Sông Hoàng Hà",
+      "D": "Sông Mississippi"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 32,
+    "question": "Việt Nam giáp với bao nhiêu quốc gia trên đất liền?",
+    "options": {
+      "A": "2",
+      "B": "3",
+      "C": "4",
+      "D": "5"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 33,
+    "question": "Ngày Quốc khánh Việt Nam là ngày nào?",
+    "options": {
+      "A": "30/4",
+      "B": "1/5",
+      "C": "2/9",
+      "D": "19/5"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 34,
+    "question": "Ai là người tìm ra châu Mỹ?",
+    "options": {
+      "A": "Magellan",
+      "B": "Columbus",
+      "C": "Marco Polo",
+      "D": "Vasco da Gama"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 35,
+    "question": "Vạn Lý Trường Thành nằm ở quốc gia nào?",
+    "options": {
+      "A": "Nhật Bản",
+      "B": "Hàn Quốc",
+      "C": "Trung Quốc",
+      "D": "Mông Cổ"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 36,
+    "question": "Sa mạc lớn nhất thế giới là sa mạc nào?",
+    "options": {
+      "A": "Gobi",
+      "B": "Kalahari",
+      "C": "Atacama",
+      "D": "Sahara"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 37,
+    "question": "Năng lượng gió thuộc loại năng lượng nào?",
+    "options": {
+      "A": "Hóa thạch",
+      "B": "Hạt nhân",
+      "C": "Tái tạo",
+      "D": "Không tái tạo"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 38,
+    "question": "Bộ não người thuộc hệ cơ quan nào?",
+    "options": {
+      "A": "Hệ tiêu hóa",
+      "B": "Hệ tuần hoàn",
+      "C": "Hệ hô hấp",
+      "D": "Hệ thần kinh"
+    },
+    "answer": "D"
+  },
+  {
+    "id": 39,
+    "question": "Mặt Trăng quay quanh hành tinh nào?",
+    "options": {
+      "A": "Sao Hỏa",
+      "B": "Sao Kim",
+      "C": "Trái Đất",
+      "D": "Sao Mộc"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 40,
+    "question": "Đơn vị đo nhiệt độ thường dùng là gì?",
+    "options": {
+      "A": "Ampe",
+      "B": "Jun",
+      "C": "Độ C",
+      "D": "Oát"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 41,
+    "question": "Ăn nhiều rau xanh giúp ích gì?",
+    "options": {
+      "A": "Tăng cân nhanh",
+      "B": "Tốt cho hệ tiêu hóa",
+      "C": "Gây mệt mỏi",
+      "D": "Mất nước"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 42,
+    "question": "Internet giúp ích nhiều nhất trong lĩnh vực nào?",
+    "options": {
+      "A": "Cô lập con người",
+      "B": "Kết nối và học tập",
+      "C": "Lãng phí thời gian",
+      "D": "Gây nghiện"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 43,
+    "question": "Khi xảy ra hỏa hoạn, việc đầu tiên cần làm là gì?",
+    "options": {
+      "A": "Giấu đồ đạc",
+      "B": "Bình tĩnh và tìm lối thoát",
+      "C": "Chạy lên cao",
+      "D": "Trốn vào nhà vệ sinh"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 44,
+    "question": "Kỹ năng quản lý thời gian giúp gì?",
+    "options": {
+      "A": "Làm việc hiệu quả",
+      "B": "Căng thẳng hơn",
+      "C": "Trì hoãn",
+      "D": "Lười biếng"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 45,
+    "question": "Thái độ nào giúp học tập tốt?",
+    "options": {
+      "A": "Chủ động",
+      "B": "Chán nản",
+      "C": "Lười biếng",
+      "D": "Phó mặc"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 46,
+    "question": "Phản ứng nào tạo ra khí CO2?",
+    "options": {
+      "A": "Đốt than",
+      "B": "Đông đặc nước",
+      "C": "Hòa tan muối",
+      "D": "Bay hơi"
+    },
+    "answer": "A"
+  },
+  {
+    "id": 47,
+    "question": "Kim loại nào thường dùng làm dây dẫn điện?",
+    "options": {
+      "A": "Sắt",
+      "B": "Nhôm",
+      "C": "Đồng",
+      "D": "Chì"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 48,
+    "question": "Thực phẩm nào giàu protein?",
+    "options": {
+      "A": "Gạo",
+      "B": "Rau xanh",
+      "C": "Thịt",
+      "D": "Đường"
+    },
+    "answer": "C"
+  },
+  {
+    "id": 49,
+    "question": "Tác hại của việc thức khuya kéo dài là gì?",
+    "options": {
+      "A": "Cải thiện trí nhớ",
+      "B": "Ảnh hưởng sức khỏe",
+      "C": "Tăng chiều cao",
+      "D": "Giảm căng thẳng"
+    },
+    "answer": "B"
+  },
+  {
+    "id": 50,
+    "question": "Mục tiêu chính của việc học tập là gì?",
+    "options": {
+      "A": "Đối phó",
+      "B": "Lấy điểm",
+      "C": "Phát triển bản thân",
+      "D": "So sánh với người khác"
+    },
+    "answer": "C"
+  }
+]
 
