@@ -1,0 +1,168 @@
+# 🎮 Nhom[DienSoNhom]-NetworkQuizBattle
+
+> Đồ án giữa kỳ môn Lập trình mạng | Mini Game: Đấu Trường Tri Thức (Network Quiz)
+
+![Python](https://img.shields.io/badge/Language-Python_3.x-blue?style=flat-square)
+![Tech](https://img.shields.io/badge/Tech-TCP_Socket_MultiThreading-green?style=flat-square)
+![GUI](https://img.shields.io/badge/GUI-Tkinter-orange?style=flat-square)
+
+## 📖 Giới thiệu (Overview)
+
+Dự án xây dựng một hệ thống Game Quiz Multiplayer theo mô hình **Client-Server** sử dụng Python. 
+Server đóng vai trò là Host (MC), quản lý bộ câu hỏi và tính điểm. Các Client kết nối vào phòng chờ, nhận câu hỏi cùng lúc và thi đua trả lời để giành điểm số cao nhất.
+
+### Tính năng chính
+
+- **Multi-Client:** Hỗ trợ nhiều người chơi kết nối đồng thời (Sử dụng Multi-threading).
+- **Real-time:** Câu hỏi được đẩy từ Server xuống tất cả Client cùng lúc.
+- **Scoring:** Hệ thống tính điểm tự động và cập nhật bảng xếp hạng ngay lập tức.
+- **Protocol:** Giao tiếp qua TCP/IP bằng định dạng JSON.
+
+---
+
+## 🚀 Hướng dẫn Cài đặt & Chạy (Getting Started)
+
+### 1. Yêu cầu hệ thống
+
+- **Python 3.8+**
+- Thư viện chuẩn (Built-in): `socket`, `threading`, `json`, `tkinter` (thường có sẵn khi cài Python, không cần pip install thêm).
+
+### 2. Cách chạy chương trình
+
+**Bước 1: Khởi động Server** (Chạy trên máy Host)
+
+Mở terminal tại thư mục gốc của dự án:
+
+```bash
+python src/server.py
+```
+
+Server sẽ bắt đầu lắng nghe tại `127.0.0.1:65432`
+
+**Bước 2: Khởi động Client** (Mở terminal mới cho mỗi người chơi)
+
+```bash
+python src/client/main_client.py
+```
+
+Giao diện đăng nhập hiện ra → Nhập tên → Bắt đầu chơi.
+
+---
+
+## 📅 Phân Công Thành Viên (Team Roles)
+
+## 📅 Phân Công Thành Viên (Team Roles) - Đã Cập Nhật
+
+| Thành viên | Role | Nhiệm vụ chi tiết (Scope of Work) | Nhánh Git (Branch) |
+| :--- | :--- | :--- | :--- |
+| Lục Sỹ Minh Hiền | **Leader / Server Core** | - Code `server.py`: Socket bind, listen, đa luồng (`threading`).<br>- Quản lý danh sách kết nối (Connection Pool).<br>- Review và Merge code các thành viên. | `feature/server-core` |
+| Trần Phát Đạt | **Game Engine** | - Code Logic chính: Máy trạng thái (Chờ -> Hỏi -> Trả lời -> Kết quả).<br>- Xử lý tính điểm, thời gian đếm ngược (Timer).<br>- Phối hợp dữ liệu với TV5. | `feature/game-logic` |
+| Hà Minh Hiếu | **Client Network** | - Code lớp mạng phía Client (Socket Client).<br>- Xử lý nhận dữ liệu không đồng bộ (Background Thread) để UI không bị đơ.<br>- Parse gói tin JSON nhận từ Server. | `feature/client-net` |
+| Sim Lưu Gia Bảo | **Frontend (GUI)** | - Thiết kế giao diện Tkinter toàn bộ game.<br>- Hiệu ứng chuyển màn hình (Login -> Waiting -> Game -> End).<br>- Bind sự kiện nút bấm gửi về Network. | `feature/client-ui` |
+| Lê Hoàng NHật Bình | **Data & Report** | - **Quản lý CSDL:** Tạo file `questions.json` (50+ câu hỏi), lưu file `highscore.json`.<br>- **Code:** Viết class `DataManager` để Load câu hỏi & Lưu điểm.<br>- **Báo cáo:** Soạn docs protocol, chụp ảnh demo, đóng gói nộp bài. | `feature/data-report` |
+
+---
+
+## 🛠️ Quy Trình Git (Git Workflow)
+
+Để đảm bảo code sạch và dễ chấm điểm:
+
+- **Main Branch:** Chỉ chứa code hoàn chỉnh, chạy ổn định.
+- **Dev Branch:** Nhánh tích hợp code chung trước khi đưa vào Main.
+- **Feature Branch:** Mỗi thành viên code trên nhánh riêng (như bảng trên).
+- **Commit Message Rule:** `[Module] Description`. VD: `[UI] Design login screen`, `[Server] Fix thread crash`.
+
+---
+
+## 📂 Cấu Trúc Thư Mục (Project Structure)
+
+## 📂 Cấu Trúc Thư Mục (Project Structure)
+
+```text
+Nhom[X]-NetworkQuizBattle/
+├── data/                 # [TV5] Thư mục chứa dữ liệu
+│   ├── questions.json    # Ngân hàng câu hỏi
+│   └── highscore.json    # File lưu lịch sử điểm cao
+├── docs/                 # [TV5] Chứa tài liệu báo cáo & ảnh chụp
+│   └── images/           # Ảnh demo game
+├── src/
+│   ├── __init__.py
+│   ├── server.py         # [TV1] Code chạy Server
+│   ├── game_logic.py     # [TV2] Logic game (Timer, State)
+│   ├── data_manager.py   # [TV5] Class đọc/ghi file JSON
+│   └── client/
+│       ├── __init__.py
+│       ├── main_client.py # [TV3] File chạy Client
+│       ├── network.py     # [TV3] Xử lý kết nối mạng
+│       └── ui.py          # [TV4] Giao diện Tkinter
+├── tests/                # Script test nhanh
+├── README.md             # Tài liệu dự án
+└── .gitignore
+
+---
+
+## 📡 Giao Thức Giao Tiếp (JSON Protocol)
+
+Mọi dữ liệu gửi qua Socket đều được mã hóa `utf-8` dưới dạng JSON String.
+
+### 1. Client gửi Server (Request)
+
+**Đăng nhập:**
+
+```json
+{
+    "type": "LOGIN",
+    "name": "NguyenVanA"
+}
+```
+
+**Gửi câu trả lời:**
+
+```json
+{
+    "type": "ANSWER",
+    "question_id": 1,
+    "choice": "B"
+}
+```
+
+### 2. Server gửi Client (Response)
+
+**Gửi câu hỏi:**
+
+```json
+{
+    "type": "QUESTION", 
+    "payload": {
+        "id": 1, 
+        "text": "Thủ đô của Việt Nam?", 
+        "options": ["Hà Nội", "Đà Nẵng", "TP.HCM", "Cần Thơ"]
+    }
+}
+```
+
+**Thông báo kết quả:**
+
+```json
+{
+    "type": "RESULT", 
+    "payload": {
+        "status": "CORRECT", 
+        "score": 10,
+        "message": "Chính xác! Bạn được cộng 10 điểm."
+    }
+}
+```
+
+---
+
+## 📝 Ghi chú
+
+- Mỗi thành viên tạo branch riêng theo quy ước trên.
+- Commit thường xuyên với message rõ ràng.
+- Trước khi merge vào `dev`, hãy test kỹ lưỡng.
+- Khi hoàn thành toàn bộ dự án, merge `dev` vào `main`.
+
+---
+
+**Happy Coding! 🚀**
