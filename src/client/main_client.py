@@ -1,17 +1,18 @@
-﻿from network import NetworkClient
+﻿import sys
+import os
 
-def handle_server_message(msg):
-    """Hàm này sẽ được gọi mỗi khi Server gửi cái gì đó về"""
-    msg_type = msg.get("type")
-    
-    if msg_type == "QUESTION":
-        print(f"\nCâu hỏi mới: {msg['payload']['text']}")
-        print(f"Lựa chọn: {msg['payload']['options']}")
-    elif msg_type == "RESULT":
-        print(f"\nKết quả: {msg['payload']['message']}")
+# Thêm đường dẫn để tìm thấy module 'ui' và 'network' trong cùng thư mục
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# Chạy thử
-client = NetworkClient()
-if client.connect(callback=handle_server_message):
-    # Gửi thử lệnh Login
-    client.send({"type": "LOGIN", "name": "Minh Hieu"})
+from ui import QuizUI
+
+if __name__ == "__main__":
+    # demo_mode=False: Chạy Client kết nối với Server thật
+    # demo_mode=True: Chạy thử giao diện một mình (Mock data)
+    try:
+        # Bật giao diện lên -> Chương trình sẽ chạy mãi cho đến khi tắt cửa sổ
+        app = QuizUI(demo_mode=False)
+        app.run()
+    except Exception as e:
+        print(f"Lỗi khởi chạy Client: {e}")
+        input("Nhấn Enter để thoát...")

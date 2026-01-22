@@ -3,17 +3,18 @@ import threading
 import json
 
 class NetworkClient:
-    def __init__(self, host='127.0.0.1', port=65432):
+    # SỬA 1: Thêm tham số callback vào hàm khởi tạo __init__
+    def __init__(self, callback, host='127.0.0.1', port=65432):
         self.host = host
         self.port = port
         self.client_socket = None
         self.running = False
-        self.callback = None # Hàm này dùng để gửi dữ liệu ngược về UI
+        self.callback = callback # Lưu hàm callback ngay từ đầu
 
-    def connect(self, callback):
+    # SỬA 2: Hàm connect không cần nhận callback nữa
+    def connect(self):
         """Kết nối tới server và bắt đầu luồng nhận dữ liệu."""
         try:
-            self.callback = callback
             self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.client_socket.connect((self.host, self.port))
             self.running = True
@@ -25,7 +26,8 @@ class NetworkClient:
             return True
         except Exception as e:
             print(f"Lỗi kết nối: {e}")
-            return False
+            # Có thể ném lỗi ra ngoài để UI bắt được và hiện thông báo
+            raise e
 
     def _receive_loop(self):
         """Luồng chạy ngầm để nhận dữ liệu JSON liên tục."""
