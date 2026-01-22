@@ -1,4 +1,4 @@
-# 🎮 Nhom[DienSoNhom]-NetworkQuizBattle
+# 🎮 Nhom5-NetworkQuizBattle
 
 > Đồ án giữa kỳ môn Lập trình mạng | Mini Game: Đấu Trường Tri Thức (Network Quiz)
 
@@ -51,8 +51,6 @@ Giao diện đăng nhập hiện ra → Nhập tên → Bắt đầu chơi.
 
 ## 📅 Phân Công Thành Viên (Team Roles)
 
-## 📅 Phân Công Thành Viên (Team Roles) - Đã Cập Nhật
-
 | Thành viên | Role | Nhiệm vụ chi tiết (Scope of Work) | Nhánh Git (Branch) |
 | :--- | :--- | :--- | :--- |
 | Lục Sỹ Minh Hiền | **Leader / Server Core** | - Code `server.py`: Socket bind, listen, đa luồng (`threading`).<br>- Quản lý danh sách kết nối (Connection Pool).<br>- Review và Merge code các thành viên. | `feature/server-core` |
@@ -76,29 +74,22 @@ Giao diện đăng nhập hiện ra → Nhập tên → Bắt đầu chơi.
 
 ## 📂 Cấu Trúc Thư Mục (Project Structure)
 
-## 📂 Cấu Trúc Thư Mục (Project Structure)
-
 ```text
-Nhom[X]-NetworkQuizBattle/
+Nhom5-NetworkQuizBattle/
 ├── data/                 # [TV5] Thư mục chứa dữ liệu
 │   ├── questions.json    # Ngân hàng câu hỏi
 │   └── highscore.json    # File lưu lịch sử điểm cao
-├── docs/                 # [TV5] Chứa tài liệu báo cáo & ảnh chụp
-│   └── images/           # Ảnh demo game
 ├── src/
-│   ├── __init__.py
 │   ├── server.py         # [TV1] Code chạy Server
 │   ├── game_logic.py     # [TV2] Logic game (Timer, State)
 │   ├── data_manager.py   # [TV5] Class đọc/ghi file JSON
 │   └── client/
-│       ├── __init__.py
 │       ├── main_client.py # [TV3] File chạy Client
 │       ├── network.py     # [TV3] Xử lý kết nối mạng
 │       └── ui.py          # [TV4] Giao diện Tkinter
 ├── tests/                # Script test nhanh
 ├── README.md             # Tài liệu dự án
 └── .gitignore
-
 ---
 
 ## 📡 Giao Thức Giao Tiếp (JSON Protocol)
@@ -164,5 +155,3 @@ Mọi dữ liệu gửi qua Socket đều được mã hóa `utf-8` dưới dạ
 - Khi hoàn thành toàn bộ dự án, merge `dev` vào `main`.
 
 ---
-
-**Happy Coding! 🚀**
