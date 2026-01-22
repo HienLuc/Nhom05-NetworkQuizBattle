@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import random
 
-# ===================== MOCK NETWORK CLIENT =====================
+#MOCK NETWORK CLIENT
 class MockNetworkClient:
     """Mock client để demo UI không cần server thật"""
     def __init__(self, callback):
@@ -13,12 +13,10 @@ class MockNetworkClient:
         self.connected = True
         
     def send(self, message):
-        # Giả lập phản hồi từ server
         if message["type"] == "LOGIN":
             self.simulate_question(1)
             
         elif message["type"] == "ANSWER":
-            # Giả lập kết quả
             is_correct = random.choice([True, False])
             self.simulate_result(is_correct)
             
@@ -43,7 +41,7 @@ class MockNetworkClient:
         time.sleep(0.5)
         self.callback({
             "type": "RESULT",
-            "correct_answer": "B", # Giả sử B luôn đúng để test
+            "correct_answer": "B",
             "score": 10 if is_correct else 0
         })
         
@@ -54,7 +52,7 @@ class MockNetworkClient:
         self.connected = False
 
 
-# ===================== QUIZ UI =====================
+#QUIZ UI
 class QuizUI:
     def __init__(self, demo_mode=True):
         self.root = tk.Tk()
@@ -62,7 +60,7 @@ class QuizUI:
         self.root.geometry("600x500")
         self.root.resizable(False, False)
         
-        # [NEW] Căn giữa màn hình cho chuyên nghiệp
+        #Căn giữa màn hình cho chuyên nghiệp
         self.center_window()
         
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
@@ -90,7 +88,7 @@ class QuizUI:
         y = (self.root.winfo_screenheight() // 2) - (height // 2)
         self.root.geometry(f'{width}x{height}+{x}+{y}')
 
-    # ===================== LOGIN SCREEN =====================
+    #LOGIN SCREEN
     def build_login_screen(self):
         self.clear_screen()
 
@@ -98,7 +96,7 @@ class QuizUI:
         header_frame.pack(fill="x")
         header_frame.pack_propagate(False)
         
-        tk.Label(header_frame, text="🎮 NETWORK QUIZ BATTLE",
+        tk.Label(header_frame, text=" NETWORK QUIZ BATTLE",
                  font=("Arial", 20, "bold"),
                  bg="#4A90E2", fg="white").pack(expand=True)
 
@@ -112,7 +110,7 @@ class QuizUI:
         self.name_entry.focus()
         self.name_entry.bind('<Return>', lambda e: self.login())
 
-        tk.Button(form_frame, text="🚀 Bắt đầu",
+        tk.Button(form_frame, text=" Bắt đầu",
                   font=("Arial", 14, "bold"),
                   bg="#4CAF50", fg="white",
                   padx=30, pady=10,
@@ -121,7 +119,7 @@ class QuizUI:
     def login(self):
         name = self.name_entry.get().strip()
         if not name:
-            messagebox.showwarning("⚠️ Lỗi", "Vui lòng nhập tên!")
+            messagebox.showwarning(" Lỗi", "Vui lòng nhập tên!")
             return
 
         self.username = name
@@ -129,32 +127,32 @@ class QuizUI:
             self.client.connect()
             self.client.send({
                 "type": "LOGIN",
-                "name": self.username # Đã sửa đúng key
+                "name": self.username
             })
             self.build_waiting_screen()
         except Exception as e:
-            messagebox.showerror("❌ Lỗi kết nối", f"Không thể kết nối Server:\n{e}")
+            messagebox.showerror(" Lỗi kết nối", f"Không thể kết nối Server:\n{e}")
 
-    # ===================== WAITING SCREEN =====================
+    #WAITING SCREEN
     def build_waiting_screen(self):
         self.clear_screen()
         
         header_frame = tk.Frame(self.root, bg="#4A90E2", height=80)
         header_frame.pack(fill="x")
         
-        tk.Label(header_frame, text=f"👋 Xin chào, {self.username}!",
+        tk.Label(header_frame, text=f" Xin chào, {self.username}!",
                  font=("Arial", 16, "bold"), bg="#4A90E2", fg="white").pack(expand=True, fill="both")
 
         content_frame = tk.Frame(self.root)
         content_frame.pack(expand=True)
 
-        tk.Label(content_frame, text="⏳ Đang chờ người chơi khác...", font=("Arial", 14)).pack(pady=30)
+        tk.Label(content_frame, text=" Đang chờ người chơi khác...", font=("Arial", 14)).pack(pady=30)
         
         progress = ttk.Progressbar(content_frame, mode='indeterminate', length=300)
         progress.pack(pady=20)
         progress.start(10)
 
-    # ===================== QUIZ SCREEN =====================
+    #QUIZ SCREEN
     def build_quiz_screen(self, question_data):
         self.clear_screen()
         self.current_question = question_data
@@ -179,7 +177,7 @@ class QuizUI:
         question_frame = tk.Frame(self.root, bg="#f0f0f0")
         question_frame.pack(fill="both", expand=True, padx=20, pady=20)
 
-        tk.Label(question_frame, text="❓ Câu hỏi:", font=("Arial", 12, "bold"), bg="#f0f0f0").pack(anchor="w", pady=(10, 5))
+        tk.Label(question_frame, text=" Câu hỏi:", font=("Arial", 12, "bold"), bg="#f0f0f0").pack(anchor="w", pady=(10, 5))
         
         tk.Label(question_frame, text=question_data["question"],
                  wraplength=500, font=("Arial", 13), bg="#f0f0f0", justify="left").pack(anchor="w", pady=10, padx=10)
@@ -187,15 +185,14 @@ class QuizUI:
         options_frame = tk.Frame(question_frame, bg="#f0f0f0")
         options_frame.pack(fill="both", expand=True, pady=10)
 
-        # [FIX QUAN TRỌNG] Tạo Radiobutton với Value là A, B, C, D
         for i, option_text in enumerate(question_data["options"]):
             option_key = chr(65 + i) # 0->A, 1->B...
             
             rb = tk.Radiobutton(
                 options_frame,
-                text=f"{option_key}. {option_text}", # Hiện: "A. Thông dịch"
+                text=f"{option_key}. {option_text}",
                 variable=self.selected_answer,
-                value=option_key,  # <--- GỬI: "A" (Code cũ gửi nguyên câu text nên Server không hiểu)
+                value=option_key,  
                 font=("Arial", 12),
                 bg="#f0f0f0",
                 activebackground="#e0e0e0",
@@ -211,7 +208,7 @@ class QuizUI:
     def submit_answer(self):
         answer = self.selected_answer.get()
         if not answer:
-            messagebox.showwarning("⚠️ Lỗi", "Bạn chưa chọn đáp án!")
+            messagebox.showwarning(" Lỗi", "Bạn chưa chọn đáp án!")
             return
 
         if self.answered: return 
@@ -221,18 +218,18 @@ class QuizUI:
         try:
             self.client.send({
                 "type": "ANSWER",
-                "answer": answer # Gửi "A", "B", "C"...
+                "answer": answer
             })
         except Exception as e:
-            messagebox.showerror("❌ Lỗi", str(e))
+            messagebox.showerror(" Lỗi", str(e))
             self.answered = False
 
-    # ===================== RESULT SCREEN =====================
+    #RESULT SCREEN
     def show_result(self, result_data):
         self.clear_screen()
         self.score = result_data.get('score', self.score)
         
-        # [FIX] Logic kiểm tra đúng sai tại Client để hiển thị màu
+        #Logic kiểm tra đúng sai tại Client để hiển thị màu
         server_correct_ans = result_data.get("correct_answer", "")
         my_ans = self.selected_answer.get()
         
@@ -249,20 +246,20 @@ class QuizUI:
         content_frame.pack(expand=True)
 
         if is_correct:
-            tk.Label(content_frame, text="🎉 CHÍNH XÁC!", font=("Arial", 28, "bold"), fg="#4CAF50").pack(pady=40)
+            tk.Label(content_frame, text=" CHÍNH XÁC!", font=("Arial", 28, "bold"), fg="#4CAF50").pack(pady=40)
         else:
-            tk.Label(content_frame, text="❌ SAI RỒI!", font=("Arial", 28, "bold"), fg="#F44336").pack(pady=40)
+            tk.Label(content_frame, text=" SAI RỒI!", font=("Arial", 28, "bold"), fg="#F44336").pack(pady=40)
             tk.Label(content_frame, text=f"Đáp án đúng: {server_correct_ans}", 
                     font=("Arial", 13), fg="#666").pack(pady=10)
 
-        tk.Label(content_frame, text="⏳ Chờ câu hỏi tiếp theo...", font=("Arial", 12), fg="#666").pack(pady=20)
+        tk.Label(content_frame, text=" Chờ câu hỏi tiếp theo...", font=("Arial", 12), fg="#666").pack(pady=20)
 
-    # ===================== GAME OVER =====================
+    #GAME OVER
     def show_game_over(self, message):
         self.clear_screen()
         header_frame = tk.Frame(self.root, bg="#F44336", height=100)
         header_frame.pack(fill="x")
-        tk.Label(header_frame, text="🏁 GAME OVER", font=("Arial", 24, "bold"), bg="#F44336", fg="white").pack(expand=True)
+        tk.Label(header_frame, text=" GAME OVER", font=("Arial", 24, "bold"), bg="#F44336", fg="white").pack(expand=True)
 
         content_frame = tk.Frame(self.root)
         content_frame.pack(expand=True)
@@ -271,9 +268,9 @@ class QuizUI:
                  font=("Arial", 18, "bold")).pack(pady=30)
 
         if "leaderboard" in message:
-            tk.Label(content_frame, text="📊 Bảng xếp hạng:", font=("Arial", 14, "bold")).pack(pady=10)
+            tk.Label(content_frame, text=" Bảng xếp hạng:", font=("Arial", 14, "bold")).pack(pady=10)
             for i, player in enumerate(message["leaderboard"], 1):
-                medal = "🥇" if i==1 else "🥈" if i==2 else "🥉" if i==3 else "  "
+                medal = "" if i==1 else "🥈" if i==2 else "🥉" if i==3 else "  "
                 tk.Label(content_frame, text=f"{medal} {i}. {player['name']}: {player['score']}").pack()
 
         btn_frame = tk.Frame(content_frame)
@@ -281,7 +278,7 @@ class QuizUI:
         tk.Button(btn_frame, text="🔄 Chơi lại", font=("Arial", 12), bg="#4CAF50", fg="white", padx=20, command=self.restart_game).pack(side="left", padx=10)
         tk.Button(btn_frame, text="🚪 Thoát", font=("Arial", 12), bg="#F44336", fg="white", padx=20, command=self.quit_game).pack(side="left", padx=10)
 
-    # ===================== HANDLERS & UTILS =====================
+    #HANDLERS & UTILS
     def handle_server_message(self, message):
         self.root.after(0, self.process_message, message)
 
@@ -290,7 +287,7 @@ class QuizUI:
         if msg_type == "QUESTION": self.build_quiz_screen(message)
         elif msg_type == "RESULT": self.show_result(message)
         elif msg_type == "GAME_OVER": self.show_game_over(message)
-        elif msg_type == "ERROR": messagebox.showerror("❌ Lỗi", message.get("message"))
+        elif msg_type == "ERROR": messagebox.showerror(" Lỗi", message.get("message"))
 
     def clear_screen(self):
         for widget in self.root.winfo_children(): widget.destroy()
